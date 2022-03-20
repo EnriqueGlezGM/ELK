@@ -27,6 +27,7 @@ services:
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
+      - ./Datasheets:/usr/share/logstash/Datasheets:ro,Z
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
     ports:
