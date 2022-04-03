@@ -1,0 +1,6 @@
+---
+## Default Logstash configuration from Logstash base image.
+## https://github.com/elastic/logstash/blob/master/docker/data/logstash/config/logstash-full.yml
+#
+monitoring.enabled: false
+monitoring.cluster_uuid: PRODUCTION_ES_CLUSTER_UUID
