@@ -1,3 +1,9 @@
+GET _cat/nodes?v
+
+GET _cat/indices?v
+
+GET /_cat/shards
+
 PUT reindexubicacion
 {
   "mappings": {
