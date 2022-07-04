@@ -1,23 +1,38 @@
 # ELK
 
 First, run docker compose and wait to all containers start:
-	docker compose up
+```console
+$ docker-compose up
+```
 
 Second, you have to log as root in logstash container:
-	docker exec -it --workdir /root --user root logstash bash
+```console
+$ docker exec -it --workdir /root --user root logstash bash
+```
+	
 
 When you are in, you need to change the permissions for config folder:
-	chown -R logstash:root /usr/share/logstash/config
+```console
+# chown -R logstash:root /usr/share/logstash/config
+```
 
-Also, due to a bug, you should overwrite logstash.yml:
-	cat /usr/share/logstash/config/logstashContent.yml > /usr/share/logstash/config/logstash.yml
+Also, due to permissions, you should overwrite logstash.yml:
+```console
+# cat /usr/share/logstash/config/logstashContent.yml > /usr/share/logstash/config/logstash.yml
+```
 
 When you have done all of this, uncomment logstash pipeline, the file is logstash.conf, and restart logstash container.
 
 Other interesting commands are:
 - Stop the container(s) using the following command:
-	docker-compose down
+```console
+$ docker-compose down
+```
 - Delete all containers using the following command:
-	docker rm -f $(docker ps -a -q)
+```console
+$ docker rm -f $(docker ps -a -q)
+```
 - Delete all volumes using the following command:
-	docker volume rm $(docker volume ls -q)
+```console
+$ docker volume rm $(docker volume ls -q)
+```
