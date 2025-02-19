@@ -2,7 +2,7 @@
 
 First, run docker compose and wait to all containers start:
 ```console
-docker-compose up
+docker compose up -d
 ```
 
 Second, you have to log as root in logstash container:
@@ -31,7 +31,7 @@ docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -
 Other interesting commands are:
 - Stop the container(s) using the following command:
 ```console
-docker-compose down
+docker compose down
 ```
 - Delete all containers using the following command:
 ```console
