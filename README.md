@@ -23,6 +23,11 @@ Also, due to permissions, you should overwrite logstash.yml:
 
 When you have done all of this, uncomment logstash pipeline, the file is logstash.conf, and restart logstash container.
 
+To log in to Kibana I recommend resetting the password for the elastic user:
+```console
+docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+```
+
 Other interesting commands are:
 - Stop the container(s) using the following command:
 ```console
